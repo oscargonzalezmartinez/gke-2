@@ -1,0 +1,6 @@
+server:
+  port: 8081
+ms1-endpoint: http://localhost:8080
+logging:
+ level:
+  org.ogm.gkedemo2: debug

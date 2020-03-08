@@ -1,0 +1,5 @@
+spring:
+ application:
+  name:gkedemo1
+server:
+  port: 8080

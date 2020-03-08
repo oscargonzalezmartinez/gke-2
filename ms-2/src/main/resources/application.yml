@@ -1,0 +1,9 @@
+spring:
+ application:
+  name:gkedemo2
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+ms1-endpoint: gkedemo1
