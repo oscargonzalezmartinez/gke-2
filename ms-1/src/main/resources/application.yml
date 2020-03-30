@@ -1,6 +1,6 @@
 spring:
  application:
-  name:gkedemo1
+  name:ms-1
 management:
   endpoints:
     web:

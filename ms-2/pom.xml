@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.ogm.gke</groupId>
-	<artifactId>gke-demo-2</artifactId>
+	<artifactId>ms-2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>gke-demo-2</name>
+	<name>ms-2</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

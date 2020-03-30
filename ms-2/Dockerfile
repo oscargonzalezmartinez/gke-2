@@ -4,4 +4,4 @@ COPY src /tmp/src/
 WORKDIR /tmp/
 EXPOSE 8080
 RUN mvn package
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/tmp/target/gke-demo-2-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/tmp/target/ms-1-0.0.1-SNAPSHOT.jar"]
