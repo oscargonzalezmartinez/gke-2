@@ -23,7 +23,7 @@ public class Doit {
 		
 		RestTemplate restTemplate = new RestTemplate();
 		String resourceUrl = ms1Endpoint+"/add/"+first+"/"+second;
-		logger.debug(resourceUrl);
+		logger.info(resourceUrl);
 		
 		ResponseEntity<Integer> response
 			  = restTemplate.getForEntity(resourceUrl, Integer.class);
