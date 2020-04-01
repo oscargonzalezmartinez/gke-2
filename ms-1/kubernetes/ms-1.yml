@@ -6,7 +6,7 @@ metadata:
   name: ms-1
   namespace: default
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: ms-1
@@ -30,7 +30,7 @@ kind: HorizontalPodAutoscaler
 metadata:
   labels:
     app: ms-1
-  name: ms-1-hpa-4qft
+  name: ms-1-hpa-z4ep
   namespace: default
 spec:
   maxReplicas: 5
@@ -55,10 +55,10 @@ metadata:
   name: ms-1-service
   namespace: default
 spec:
-  clusterIP: 10.0.6.107
+  clusterIP: 10.0.9.188
   externalTrafficPolicy: Cluster
   ports:
-    - nodePort: 31913
+    - nodePort: 30417
       port: 80
       protocol: TCP
       targetPort: 8080
