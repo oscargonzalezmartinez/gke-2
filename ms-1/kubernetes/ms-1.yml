@@ -2,14 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: ms-2
-  name: ms-2
+    app: ms-1
+  name: ms-1
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ms-2
+      app: ms-1
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -18,19 +18,19 @@ spec:
   template:
     metadata:
       labels:
-        app: ms-2
+        app: ms-1
     spec:
       containers:
-        - image: gcr.io/savvy-temple-269019/github.com/oscargonzalezmartinez/gke-2-ms-2
+        - image: gcr.io/savvy-temple-269019/github.com/oscargonzalezmartinez/gke-2-ms-1
           imagePullPolicy: IfNotPresent
-          name: ms-2
+          name: ms-1
 ---
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
   labels:
-    app: ms-2
-  name: ms-2-hpa-4qft
+    app: ms-1
+  name: ms-1-hpa-4qft
   namespace: default
 spec:
   maxReplicas: 5
@@ -43,7 +43,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: ms-2
+    name: ms-1
 ---
 apiVersion: v1
 kind: Service
@@ -51,8 +51,8 @@ metadata:
   finalizers:
     - service.kubernetes.io/load-balancer-cleanup
   labels:
-    app: ms-2
-  name: ms-2-service
+    app: ms-1
+  name: ms-1-service
   namespace: default
 spec:
   clusterIP: 10.0.6.107
@@ -63,6 +63,6 @@ spec:
       protocol: TCP
       targetPort: 8080
   selector:
-    app: ms-2
+    app: ms-1
   sessionAffinity: None
   type: LoadBalancer
