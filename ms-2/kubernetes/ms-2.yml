@@ -33,7 +33,7 @@ metadata:
   name: ms-2-hpa-4qft
   namespace: default
 spec:
-  maxReplicas: 5
+  maxReplicas: 2
   metrics:
     - resource:
         name: cpu
