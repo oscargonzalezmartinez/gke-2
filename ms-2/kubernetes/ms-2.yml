@@ -24,6 +24,13 @@ spec:
         - image: gcr.io/savvy-temple-269019/github.com/oscargonzalezmartinez/gke-2-ms-2
           imagePullPolicy: IfNotPresent
           name: ms-2
+          volumeMounts:
+          - name: maven-repo
+            mountPath: /root/.m2
+          volumes:
+          - name: maven-repo
+            persistentVolumeClaim:
+             claimName: maven-repo-vc
 ---
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
