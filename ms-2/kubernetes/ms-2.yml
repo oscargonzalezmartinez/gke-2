@@ -27,10 +27,10 @@ spec:
           volumeMounts:
           - name: maven-repo
             mountPath: /root/.m2
-          volumes:
-          - name: maven-repo
-            persistentVolumeClaim:
-             claimName: maven-repo-vc
+      volumes:
+       - name: maven-repo
+         persistentVolumeClaim:
+          claimName: maven-repo-vc
 ---
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
