@@ -6,7 +6,7 @@ metadata:
   name: ms-1
   namespace: default
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: ms-1
@@ -33,7 +33,7 @@ metadata:
   name: ms-1-hpa-z4ep
   namespace: default
 spec:
-  maxReplicas: 2
+  maxReplicas: 1
   metrics:
     - resource:
         name: cpu
@@ -52,14 +52,12 @@ metadata:
     - service.kubernetes.io/load-balancer-cleanup
   labels:
     app: ms-1
-  name: ms-1-service
+  name: ms-1
   namespace: default
 spec:
-  clusterIP: 10.0.9.188
   externalTrafficPolicy: Cluster
   ports:
-    - nodePort: 30417
-      port: 80
+    - port: 80
       protocol: TCP
       targetPort: 8080
   selector:
