@@ -28,11 +28,11 @@ spec:
           - name: maven-repo
             mountPath: /root/.m2
           livenessProbe:
-           httpGet:
-            path: /actuator/health
-            port: 8080
-          initialDelaySeconds: 8
-          periodSeconds: 3            
+             httpGet:
+               path: /actuator/health
+               port: 8080
+             initialDelaySeconds: 8
+             periodSeconds: 3            
       volumes:
        - name: maven-repo
          persistentVolumeClaim:
