@@ -6,4 +6,4 @@ management:
     web:
       exposure:
         include: health,info,prometheus
-ms1-endpoint: http://ms-1
+ms1-endpoint: http://ms-1-service
