@@ -27,7 +27,7 @@ spec:
           volumeMounts:
           - name: maven-repo
             mountPath: /root/.m2
-        livenessProbe:
+          livenessProbe:
            httpGet:
             path: /actuator/health
             port: 8080
